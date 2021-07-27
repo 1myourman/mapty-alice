@@ -7,6 +7,11 @@ const inputDistance = document.querySelector('.form__input--distance');
 const inputDuration = document.querySelector('.form__input--duration');
 const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
+const script = document.createElement('script');
+script.defer = true;
+script.async = true;
+script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAP_API}&callback=initMap`;
+document.appendChild(script);
 
 class Workout {
 	date = new Date();
